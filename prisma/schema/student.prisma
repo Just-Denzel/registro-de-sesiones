@@ -1,0 +1,7 @@
+model Student {
+  id        String    @id @default(uuid(7))
+  firstName String
+  lastName  String
+  course    String
+  sessions  Session[]
+}

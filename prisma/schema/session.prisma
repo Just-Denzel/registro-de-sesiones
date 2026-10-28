@@ -1,0 +1,12 @@
+model Session {
+  id              String  @id @default(uuid(7))
+  createdAt       DateTime @default(now())
+  studentId       String
+  student         Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  date            DateTime
+  durationMinutes Int
+  topic           String
+  notes           String?
+
+  @@index([studentId])
+}
